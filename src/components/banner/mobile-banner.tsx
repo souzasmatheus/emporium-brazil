@@ -35,16 +35,6 @@ export const MobileBanner: React.FC<Props> = ({ type, intlTitleId }) => {
   return (
     <Box display={['flex', 'flex', 'none']}>
       <Content>
-        <ContentRow>
-          <Description>
-            <FormattedMessage
-              id={intlTitleId}
-              defaultMessage="Set Your Title Through Language File"
-              values={{ minute: 90 }}
-            />
-          </Description>
-        </ContentRow>
-
         <SearchWrapper>
           <Search minimal={true} />
         </SearchWrapper>
