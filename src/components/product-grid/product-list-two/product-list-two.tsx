@@ -104,7 +104,7 @@ export const Products: React.FC<ProductsProps> = ({
           </ProductsCol>
         ))}
       </ProductsRow>
-      {loadMore && data?.hasMore && (
+      {loadMore && (
         <ButtonWrapper>
           <Button
             onClick={handleLoadMore}

@@ -86,7 +86,7 @@ export const ProductGrid = ({
         ))}
       </Grid>
 
-      {loadMore && data?.hasMore && (
+      {loadMore && (
         <Box style={{ textAlign: 'center' }} mt={'2rem'}>
           <Button
             onClick={handleLoadMore}

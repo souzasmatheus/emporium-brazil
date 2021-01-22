@@ -78,7 +78,7 @@ export const ProductGrid = ({
           <ProductCard data={product} key={product.id} />
         ))}
       </Grid>
-      {loadMore && data?.hasMore && (
+      {loadMore && (
         <Box style={{ textAlign: 'center' }} mt={'2rem'}>
           <Button
             onClick={handleLoadMore}
