@@ -16,7 +16,7 @@ const options = {
   minMatchCharLength: 2,
   keys: ['title'],
 };
-function search(list, pattern) {
+function search(list, pattern): any {
   const fuse = new Fuse(list, options);
 
   return fuse.search(pattern).map((current) => current.item);
@@ -31,8 +31,14 @@ interface Props {
   limit?: number;
 }
 
+type Categories = {
+  slug: string;
+  title: string;
+}
+
 type Product = {
   type: string;
+  categories: Categories[]
 }
 
 export default function useProducts(variables: Props) {
@@ -42,7 +48,6 @@ export default function useProducts(variables: Props) {
   // need to remove when you using real API integration
   // const [formattedData, setFormattedData] = useState(false);
   let products = data?.filter((current) => current.type === type);
-  console.log(`category: ${category}`)
   if (category) {
     products = products?.filter((product) =>
       product.categories.find(
