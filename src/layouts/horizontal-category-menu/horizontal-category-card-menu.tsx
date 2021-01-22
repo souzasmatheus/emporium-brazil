@@ -24,7 +24,7 @@ interface Props {
 
 export const HorizontalCategoryCardMenu = ({ type }: Props) => {
   const router = useRouter();
-  const { data, error } = useCategory({ type });
+  const { data, error } = useCategory();
 
   if (error) return <ErrorMessage message={error.message} />;
   if (!data) return null;

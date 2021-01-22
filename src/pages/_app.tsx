@@ -7,7 +7,7 @@ import { CartProvider } from 'contexts/cart/use-cart';
 import { useMedia } from 'utils/use-media';
 import AppLayout from 'layouts/app-layout';
 import { FuegoProvider } from '@nandorojo/swr-firestore'
-import { Fuego, } from "./fuego";
+import { Fuego, } from "../config/fuego";
 import 'firebase/firestore';
 
 // External CSS import here

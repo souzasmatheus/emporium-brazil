@@ -23,7 +23,6 @@ import {
 } from './sidebar.style';
 
 import { TreeMenu } from 'components/tree-menu/tree-menu';
-import { REQUEST_MEDICINE_MENU_ITEM } from 'site-settings/site-navigation';
 import useCategory from 'data/use-category';
 import ErrorMessage from 'components/error-message/error-message';
 import CategoryWalker from 'components/category-walker/category-walker';
@@ -42,7 +41,7 @@ const SidebarCategory: React.FC<SidebarCategoryProps> = ({
   type,
 }) => {
   const router = useRouter();
-  const { data, error } = useCategory({ type });
+  const { data, error } = useCategory();
 
   if (error) return <ErrorMessage message={error.message} />;
   const { pathname, query } = router;
@@ -82,17 +81,6 @@ const SidebarCategory: React.FC<SidebarCategoryProps> = ({
     <CategoryWrapper>
       <PopoverWrapper>
         <CategoryWalker>
-          {type === 'medicine' && (
-            <Link href={REQUEST_MEDICINE_MENU_ITEM.href}>
-              <RequestMedicine>
-                <FormattedMessage
-                  id={REQUEST_MEDICINE_MENU_ITEM.id}
-                  defaultMessage={REQUEST_MEDICINE_MENU_ITEM.defaultMessage}
-                />
-              </RequestMedicine>
-            </Link>
-          )}
-
           <TreeMenu
             data={data}
             onClick={onCategoryClick}
@@ -103,17 +91,6 @@ const SidebarCategory: React.FC<SidebarCategoryProps> = ({
 
       <SidebarWrapper style={{ paddingTop: type === 'medicine' ? 0 : 45 }}>
         <Sticky enabled={isSidebarSticky} top={type === 'medicine' ? 89 : 110}>
-          {type === 'medicine' && (
-            <Link href={REQUEST_MEDICINE_MENU_ITEM.href}>
-              <RequestMedicine>
-                <FormattedMessage
-                  id={REQUEST_MEDICINE_MENU_ITEM.id}
-                  defaultMessage={REQUEST_MEDICINE_MENU_ITEM.defaultMessage}
-                />
-              </RequestMedicine>
-            </Link>
-          )}
-
           <Scrollbar className='sidebar-scrollbar'>
             <TreeWrapper>
               <TreeMenu

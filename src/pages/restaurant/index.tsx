@@ -16,8 +16,7 @@ import {
 } from 'assets/styles/pages.style';
 // Static Data Import Here
 import { siteOffers } from 'site-settings/site-offers';
-import BannerImg from 'assets/images/banner/restaurant.png';
-import { CATEGORY_MENU_ITEMS } from 'site-settings/site-navigation';
+import BannerImg from 'assets/images/banner/bakery.jpg';
 import { SEO } from 'components/seo';
 
 const Sidebar = dynamic(() => import('layouts/sidebar/sidebar'));
