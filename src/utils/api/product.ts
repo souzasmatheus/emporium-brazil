@@ -1,11 +1,23 @@
 const url = process.env.NEXT_PUBLIC_REST_API_ENDPOINT;
 export async function getAllProducts() {
-  const products = await fetch(`${url}/products`);
+  const wholeURL: string = new URL('products', url).toString()
+  const products = await fetch(wholeURL, {
+    headers: {
+      Accept: 'application/json, text/plain, */*',
+      'User-Agent': '*',
+    }
+  });
   return (await products.json()).documents;
 }
 
 export async function getProductBySlug(slug) {
-  const products = await fetch(`${url}/products`);
+  const wholeURL: string = new URL('products', url).toString()
+  const products = await fetch(wholeURL, {
+    headers: {
+      Accept: 'application/json, text/plain, */*',
+      'User-Agent': '*',
+    }
+  });
   const response = await products.json()
   const data = response.documents.find((current) => current.fields.slug.stringValue === slug);
 
