@@ -30,9 +30,14 @@ interface Props {
   offset?: number;
   limit?: number;
 }
+
+type Product = {
+  type: string;
+}
+
 export default function useProducts(variables: Props) {
   const { type, text, category, offset = 0, limit = 20 } = variables ?? {};
-  const { data, mutate, error, loading } = useCollection('products')
+  const { data, mutate, error, loading } = useCollection<Product>('products')
 
   // need to remove when you using real API integration
   // const [formattedData, setFormattedData] = useState(false);
