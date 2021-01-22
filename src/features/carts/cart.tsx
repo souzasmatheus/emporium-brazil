@@ -64,8 +64,8 @@ const Cart: React.FC<CartPropsType> = ({
             {cartItemsCount > 1 ? (
               <FormattedMessage id='cartItems' defaultMessage='items' />
             ) : (
-              <FormattedMessage id='cartItem' defaultMessage='item' />
-            )}
+                <FormattedMessage id='cartItem' defaultMessage='item' />
+              )}
           </span>
         </PopupItemCount>
 
@@ -87,54 +87,22 @@ const Cart: React.FC<CartPropsType> = ({
               />
             ))
           ) : (
-            <>
-              <NoProductImg>
-                <NoCartBag />
-              </NoProductImg>
-              <NoProductMsg>
-                <FormattedMessage
-                  id='noProductFound'
-                  defaultMessage='No products found'
-                />
-              </NoProductMsg>
-            </>
-          )}
+              <>
+                <NoProductImg>
+                  <NoCartBag />
+                </NoProductImg>
+                <NoProductMsg>
+                  <FormattedMessage
+                    id='noProductFound'
+                    defaultMessage='No products found'
+                  />
+                </NoProductMsg>
+              </>
+            )}
         </ItemWrapper>
       </Scrollbar>
 
       <CheckoutButtonWrapper>
-        <PromoCode>
-          {!coupon?.discountInPercent ? (
-            <>
-              {!hasCoupon ? (
-                <button onClick={() => setCoupon((prev) => !prev)}>
-                  <FormattedMessage
-                    id='specialCode'
-                    defaultMessage='Have a special code?'
-                  />
-                </button>
-              ) : (
-                <CouponBoxWrapper>
-                  <Coupon
-                    disabled={!items.length}
-                    style={{
-                      boxShadow: '0 3px 6px rgba(0, 0, 0, 0.06)',
-                    }}
-                  />
-                </CouponBoxWrapper>
-              )}
-            </>
-          ) : (
-            <CouponCode>
-              <FormattedMessage
-                id='couponApplied'
-                defaultMessage='Coupon Applied'
-              />
-              <span>{coupon.code}</span>
-            </CouponCode>
-          )}
-        </PromoCode>
-
         {cartItemsCount !== 0 ? (
           <Link href='/checkout'>
             <CheckoutButton onClick={onCloseBtnClick}>
@@ -153,18 +121,18 @@ const Cart: React.FC<CartPropsType> = ({
             </CheckoutButton>
           </Link>
         ) : (
-          <CheckoutButton>
-            <>
-              <Title>
-                <FormattedMessage id='nav.checkout' defaultMessage='Checkout' />
-              </Title>
-              <PriceBox>
-                {CURRENCY}
-                {calculatePrice()}
-              </PriceBox>
-            </>
-          </CheckoutButton>
-        )}
+            <CheckoutButton>
+              <>
+                <Title>
+                  <FormattedMessage id='nav.checkout' defaultMessage='Checkout' />
+                </Title>
+                <PriceBox>
+                  {CURRENCY}
+                  {calculatePrice()}
+                </PriceBox>
+              </>
+            </CheckoutButton>
+          )}
       </CheckoutButtonWrapper>
     </CartPopupBody>
   );
