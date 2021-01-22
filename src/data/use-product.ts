@@ -5,6 +5,7 @@ interface Props {
 
 type Product = {
   slug: string;
+  title: string;
 }
 
 export default function useProduct({ slug }: Props) {
@@ -14,7 +15,6 @@ export default function useProduct({ slug }: Props) {
   // need to remove when you using real API integration
   let product = data?.filter((current) => current.slug === slug);
 
-  console.log(`product: ${product}`)
   return {
     loading,
     error,

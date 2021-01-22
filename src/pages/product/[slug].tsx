@@ -66,7 +66,7 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const products = await getAllProducts();
   return {
-    paths: products.slice(0, 10).map(({ slug }) => ({ params: { slug } })),
+    paths: products.slice(0, 10).map(({ fields }) => ({ params: { slug: fields.slug.stringValue } })),
     fallback: true,
   };
 }
