@@ -150,65 +150,6 @@ const OrderReceived: React.FunctionComponent<OrderReceivedProps> = (props) => {
             </ListDes>
           </ListItem>
         </OrderDetails>
-
-        <TotalAmount>
-          <BlockTitle>
-            <FormattedMessage
-              id="totalAmountText"
-              defaultMessage="Total Amount"
-            />
-          </BlockTitle>
-
-          <ListItem>
-            <ListTitle>
-              <Text bold>
-                <FormattedMessage id="subTotal" defaultMessage="Sub total" />
-              </Text>
-            </ListTitle>
-            <ListDes>
-              <Text>$10,864.00</Text>
-            </ListDes>
-          </ListItem>
-
-          <ListItem>
-            <ListTitle>
-              <Text bold>
-                <FormattedMessage
-                  id="paymenMethodText"
-                  defaultMessage="Payment Method"
-                />
-              </Text>
-            </ListTitle>
-            <ListDes>
-              <Text>Cash On Delivery</Text>
-            </ListDes>
-          </ListItem>
-
-          <ListItem>
-            <ListTitle>
-              <Text bold>
-                <FormattedMessage
-                  id="paymentMethodName"
-                  defaultMessage="Delivery Charge"
-                />
-              </Text>
-            </ListTitle>
-            <ListDes>
-              <Text>10</Text>
-            </ListDes>
-          </ListItem>
-
-          <ListItem>
-            <ListTitle>
-              <Text bold>
-                <FormattedMessage id="totalText" defaultMessage="Total" />
-              </Text>
-            </ListTitle>
-            <ListDes>
-              <Text>$10,874.00</Text>
-            </ListDes>
-          </ListItem>
-        </TotalAmount>
       </OrderReceivedContainer>
     </OrderReceivedWrapper>
   );

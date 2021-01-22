@@ -4,7 +4,7 @@ import {
   MobileHeaderInnerWrapper,
   LogoWrapper,
 } from './header.style';
-import LogoImage from 'assets/images/logo.svg';
+import LogoImage from 'assets/images/logo.png';
 
 import Logo from 'layouts/logo/logo';
 import LanguageSwitcher from './menu/language-switcher/language-switcher';

@@ -3,7 +3,7 @@ export default [
     id: '1',
     type: 'primary',
     title: 'express-delivery',
-    time_slot: '90 min express delivery',
+    time_slot: '20-35 min express delivery',
   },
   {
     id: '2',

@@ -46,7 +46,7 @@ export const Banner: React.FC<Props> = ({
           <FormattedMessage
             id={intlTitleId}
             defaultMessage='Brasileirinho'
-            values={{ minute: 90 }}
+            values={{ minute: "20-35" }}
           />
         </Title>
         <SearchWrapper>

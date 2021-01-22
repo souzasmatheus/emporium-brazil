@@ -306,20 +306,6 @@ const CheckoutWithSidebar: React.FC<MyFormProps> = ({ token, deviceType }) => {
                     </Text>
                     <Text>{CURRENCY}0.00</Text>
                   </TextWrapper>
-
-                  <TextWrapper>
-                    <Text>
-                      <FormattedMessage
-                        id='discountText'
-                        defaultMessage='Discount'
-                      />
-                    </Text>
-                    <Text>
-                      {CURRENCY}
-                      {calculateDiscount()}
-                    </Text>
-                  </TextWrapper>
-
                   <TextWrapper style={{ marginTop: 20 }}>
                     <Bold>
                       <FormattedMessage id='totalText' defaultMessage='Total' />{' '}

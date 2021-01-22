@@ -68,6 +68,7 @@ export const HorizontalCategoryCardMenu = ({ type }: Props) => {
     <CategoryWrapper>
       <CategoryInner>
         <Swiper
+          centerInsufficientSlides
           id="category-card-menu"
           navigation={{
             nextEl: '.banner-slider-next',

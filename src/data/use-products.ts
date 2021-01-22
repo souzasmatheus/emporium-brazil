@@ -1,6 +1,5 @@
-import useSWR from 'swr';
+import { useCollection } from "@nandorojo/swr-firestore";
 import Fuse from 'fuse.js';
-import { useState } from 'react';
 const options = {
   // isCaseSensitive: false,
   // includeScore: false,
@@ -33,11 +32,12 @@ interface Props {
 }
 export default function useProducts(variables: Props) {
   const { type, text, category, offset = 0, limit = 20 } = variables ?? {};
-  const { data, mutate, error } = useSWR('/api/products.json', productFetcher);
-  const loading = !data && !error;
+  const { data, mutate, error, loading } = useCollection('products')
+
   // need to remove when you using real API integration
   // const [formattedData, setFormattedData] = useState(false);
   let products = data?.filter((current) => current.type === type);
+  console.log(`category: ${category}`)
   if (category) {
     products = products?.filter((product) =>
       product.categories.find(
@@ -74,3 +74,19 @@ export default function useProducts(variables: Props) {
     // fetchMore,
   };
 }
+
+
+// import { useCollection } from "@nandorojo/swr-firestore";
+
+// export default function useProduct() {
+//   const { data, mutate, error, loading } = useCollection('products')
+
+//   console.log(`data: ${JSON.stringify(data)}`)
+
+//   return {
+//     loading,
+//     error,
+//     data,
+//     mutate
+//   };
+// }

@@ -2,7 +2,7 @@ import React from 'react';
 import { RightMenu } from './menu/right-menu/right-menu';
 import { LeftMenu } from './menu/left-menu/left-menu';
 import HeaderWrapper from './header.style';
-import LogoImage from 'assets/images/logo.svg';
+import LogoImage from 'assets/images/logo.png';
 import Search from 'features/search/search';
 type Props = {
   className?: string;

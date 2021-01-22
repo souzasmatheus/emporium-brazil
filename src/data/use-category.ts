@@ -1,7 +1,7 @@
 import { useCollection } from "@nandorojo/swr-firestore";
 
 export default function useCategory() {
-  const { data, mutate, error, loading, } = useCollection('categories')
+  const { data, mutate, error, loading } = useCollection('categories')
 
   return {
     loading,
